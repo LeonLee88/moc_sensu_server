@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "memory_metrics": {
+      "handlers": ["default"],
+      "type": "metric",
+      "command": "/etc/sensu/plugins/memory-metrics.rb",
+      "subscribers": [
+        "moc-sensu"
+      ],
+      "interval": 300
+    }
+  }
+}

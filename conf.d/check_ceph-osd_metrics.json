@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "ceph-osd_metrics": {
+      "handlers": ["default", "email"],
+      "type": "metric",
+      "command": "/etc/sensu/plugins/ceph-osd-metrics.rb",
+      "subscribers": [
+        "ceph"
+      ],
+      "interval": 300
+    }
+  }
+}

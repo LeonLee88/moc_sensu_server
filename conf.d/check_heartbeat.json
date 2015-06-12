@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "heartbeat_check": { 
+      "handlers": ["default"],
+      "command": "echo 'Sensu is running normally! Cheers! Have a good day!' | mailx -s 'Sensu Heartbeat' moc-ops-list@bu.edu ataturk@bu.edu lihua88@bu.edu abesary@bu.edu",
+      "interval": 86400,
+      "subscribers": [ "heartbeat" ]
+    }
+  }
+}

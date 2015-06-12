@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "memory_check": {
+      "command": "/etc/sensu/plugins/check-mem.sh -w 128 -c 64",
+      "interval": 60,
+      "subscribers": [
+        "moc-sensu"
+      ]
+    }
+  }
+}

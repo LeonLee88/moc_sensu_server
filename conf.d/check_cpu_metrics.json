@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "cpu_metrics": {
+      "handlers": ["default"],
+      "type": "metric",
+      "command": "/etc/sensu/plugins/cpu-metrics.rb",
+      "subscribers": [
+        "moc-sensu"
+      ],
+      "interval": 60,
+      "handler": "debug"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "ip_check": { 
+      "handlers": ["default", "email"],
+      "command": "/etc/sensu/plugins/check-ip-connectivity.sh",
+      "interval": 60,
+      "subscribers": [ "moc-sensu" ]
+    }
+  }
+}

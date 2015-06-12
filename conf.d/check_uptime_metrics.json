@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "uptime_metrics": {
+      "handlers": ["default", "email"],
+      "type": "metric",
+      "command": "/etc/sensu/plugins/uptime-metrics.py",
+      "subscribers": [
+        "moc-sensu"
+      ],
+      "interval": 300
+    }
+  }
+}

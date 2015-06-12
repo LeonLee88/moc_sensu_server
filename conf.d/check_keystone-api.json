@@ -1,0 +1,10 @@
+{
+ "checks": {
+    "keystone-api_check": {
+      "handlers": ["default"],
+      "command": "/etc/sensu/plugins/check_keystone-api.sh -H http://10.31.27.207 -U sensu -P verypoisonyplatypus2",
+      "interval": 30,
+      "subscribers": [ "openstack-api" ]
+    }
+  }
+}

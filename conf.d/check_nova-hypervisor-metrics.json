@@ -1,0 +1,15 @@
+{
+  "checks": {
+    "nova-hypervisor_metrics": {
+      "handlers": ["default"],
+      "type": "metric",
+      "command": "/etc/sensu/plugins/nova-hypervisor-metrics.py -u sensu -p verypoisonyplatypus2 -t admin -a http://10.31.27.207:5000/v2.0",
+      "subscribers": [
+        "openstack-metrics"
+      ],
+      "interval": 60,
+      "handler": "debug"
+    }
+  }
+}
+

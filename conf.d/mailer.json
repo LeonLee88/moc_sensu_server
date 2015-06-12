@@ -1,0 +1,10 @@
+{
+  "mailer": {
+    "admin_gui": "http://127.0.0.1:3000/#/events",
+    "mail_from": "sensu@moc-sensu.moc.rc.fas.harvard.edu",
+    "mail_to": "moc.sensu.dev@gmail.com",
+    "smtp_address": "localhost",
+    "smtp_port": "25",
+    "smtp_domain": "localhost.localdomain"
+  }
+}

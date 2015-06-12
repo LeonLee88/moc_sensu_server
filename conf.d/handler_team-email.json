@@ -1,0 +1,12 @@
+{
+  "handlers": {
+    "team-email": {
+      "severities": [
+	"warning",
+        "critical"
+      ],
+      "type": "pipe",
+      "command": "mailx -s 'Sensu Alert' moc.sensu.dev@gmail.com"
+    }
+  }
+}
