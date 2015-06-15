@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Evaluate free system memory for Linux based systems.
+# Evaluate free system memory from Linux based systems.
 #
 # Date: 2007-11-12
 # Author: Thomas Borger - ESG
@@ -41,11 +41,14 @@ fi
 WARN=${WARN:=0}
 CRIT=${CRIT:=0}
 
-if [ -f /etc/redhat-release ] && [ `awk '{print $3}' /etc/redhat-release` = "21" ]; then
-  FREE_MEMORY=`free -m | grep Mem | awk '{ print $7 }'`
+# validate fedora > 20 and rhel > 7.0
+if [[ `awk '{print $3}' /etc/redhat-release` =~ ^2[0-9]{1} ]]; then
+   redhat_version=1
 else
-  FREE_MEMORY=`free -m | grep buffers/cache | awk '{ print $4 }'`
+   redhat_version=0
 fi
+
+FREE_MEMORY=`free -m | grep Mem | awk '{ print $7 }'`
 
 if [ "$FREE_MEMORY" = "" ]; then
   echo "MEM UNKNOWN -"
@@ -68,3 +71,4 @@ else
   echo "MEM OK - $output"
   exit 0
 fi
+
