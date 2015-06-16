@@ -93,7 +93,8 @@ class LoadStat < Sensu::Plugin::Metric::CLI::Graphite
 
     metrics.each do |parent, children|
       children.each do |child, value|
-        output [config[:scheme], parent, child].join('.'), value, timestamp
+        #output [config[:scheme], parent, child].join('.'), value
+        print [parent, child].join('.'), " ", value, "\n"
       end
     end
     ok
