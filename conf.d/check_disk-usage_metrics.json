@@ -1,10 +1,10 @@
 {
   "checks": {
     "disk-usage_metrics": {
-      "handlers": ["default"],
+      "handlers": ["default","debug"],
       "type": "metric", 
-      "command": "/etc/sensu/plugins/disk-usage-metrics.rb",
-      "interval": 60,
+      "command": "/etc/sensu/plugins/disk-usage-metrics.rb -i /boot",
+      "interval": 180,
       "subscribers": [ "moc-sensu" ]
     }
   }
