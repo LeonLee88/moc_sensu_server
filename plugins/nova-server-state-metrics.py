@@ -10,7 +10,7 @@ from novaclient.v3 import Client
 DEFAULT_SCHEME = '{}.nova.states'.format(socket.gethostname())
 
 def output_metric(name, value):
-    print '{}\t{}\t{}'.format(name, value, int(time.time()))
+    print '{}\t{}'.format(name, value)
 
 def main():
     parser = ArgumentParser()
@@ -22,7 +22,7 @@ def main():
     parser.add_argument('-s', '--scheme', default=DEFAULT_SCHEME)
     args = parser.parse_args()
 
-    client = Client(args.user, args.password, args.tenant, args.auth_url, service_type=args.service_type)
+    client = Client(args.user, args.password, args.tenant, args.auth_url, service_type=args.service_type, endpoint_type="internalURL")
 
     servers = client.servers.list()
 

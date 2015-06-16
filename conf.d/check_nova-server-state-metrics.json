@@ -3,7 +3,7 @@
     "nova-server-state_metrics": {
       "handlers": ["default"],
       "type": "metric",
-      "command": "/etc/sensu/plugins/nova-server-state-metrics.py -u sensu -p verypoisonyplatypus2 -t admin -a http://10.31.27.207:5000/v2.0",
+      "command": "/etc/sensu/plugins/nova-server-state-metrics.py -u sensu -p verypoisonyplatypus2 -t admin -a http://10.31.27.207:5000/v2.0 -s nova",
       "subscribers": [
         "openstack-metrics"
       ],
