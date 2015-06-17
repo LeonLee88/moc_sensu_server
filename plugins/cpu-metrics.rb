@@ -40,7 +40,7 @@ class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
     other_metrics = %w(ctxt processes procs_running procs_blocked btime intr)
     cpu_count = 0
     #Print cpu used percentage
-    usedPercentage = `top -n 2| grep "%Cpu(s)"| tail -1| awk '{print $2 + $4 "%"}'`
+    usedPercentage = `top -bn 2| grep "%Cpu(s)"| tail -1| awk '{print $2 + $4 "%"}'`
     print "usedPercentage ", usedPercentage
 
     File.open('/proc/stat', 'r').each_line do |line|
