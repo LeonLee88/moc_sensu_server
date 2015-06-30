@@ -2,7 +2,7 @@
   "checks": {
     "neutron-api_check": {
       "handlers": ["default"],
-      "command": "/etc/sensu/plugins/check_neutron-api.py --auth-url http://10.31.27.207:5000/v2.0 --username sensu --password verypoisonyplatypus2 --tenant admin",
+      "command": "/etc/sensu/plugins/check_neutron-api.py --auth-url http://localhost:5000/v2.0 --username sensu --password verypoisonyplatypus2 --tenant admin",
       "interval": 300,
       "subscribers": [ "openstack-api" ]
     }
