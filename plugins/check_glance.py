@@ -1,7 +1,14 @@
 #!/usr/bin/env python
 
 # Dependencies of this program
-#       python module: cryptography, jsonpointer, functools32
+#       python module: python-glanceclient, cryptography, jsonpointer, functools32
+#
+#
+# Copyright 2015 Hua Li <lihua88@bu.edu>
+#
+# Released under the same terms as Sensu (the MIT license);
+# see LICENSE for details.
+
 import sys
 import argparse
 import logging
@@ -25,19 +32,14 @@ parser.add_argument('--username', metavar='username', type=str,
                     help='username for authentication')
 parser.add_argument('--password', metavar='password', type=str,
                     required=True,
+                    help='password for authentication')
+parser.add_argument('--tenant', metavar='tenant', type=str,
+                    required=True,
                     help='tenant name for authentication')
 parser.add_argument('--endpoint', metavar='endpoint', type=str,
                     required=True,
                     help='Endpoint for glance server')
-parser.add_argument('--region_name', metavar='region', type=str,
-                    help='Region to select for authentication')
-parser.add_argument('--host', metavar='host', type=str,
-                    help='filter by specific host')
-parser.add_argument('--agent-type', metavar='type', type=str,
-                    help='filter by specific agent type')
-parser.add_argument('--warn-disabled', action='store_true',
-                    default=False,
-                    help='warn if any agents administratively disabled')
+
 args = parser.parse_args()
 
 try:
