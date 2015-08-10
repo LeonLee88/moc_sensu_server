@@ -1,0 +1,9 @@
+{
+  "checks":{
+    "sensor_check":{       
+      "command": "/etc/sensu/plugins/check-sensor-t.rb -u admin -p 73qtx8nVXa4c06 -h 10.99.1.101",
+      "interval": 120,
+      "subscribers": [ "heartbeat" ]
+     }
+  }
+}

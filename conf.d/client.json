@@ -1,7 +1,7 @@
 {
   "client": {
-    "name": "moc-sensu.moc.rc.fas.harvard.edu",
-    "address": "10.31.27.157",
+    "name": "moc-sensu.moc.ne.edu",
+    "address": "10.13.37.83",
     "subscriptions": [
       "moc-sensu", "heartbeat"
     ]

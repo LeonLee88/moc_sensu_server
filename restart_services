@@ -1,0 +1,5 @@
+#!/bin/bash
+
+service sensu-server restart
+service sensu-client restart
+service sensu-api    restart

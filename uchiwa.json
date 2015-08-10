@@ -2,7 +2,7 @@
   "sensu": [
     {
       "name": "Sensu",
-      "host": "10.31.27.157",
+      "host": "10.13.37.83",
       "port": 4567,
       "ssl": false,
       "timeout": 5
@@ -13,6 +13,6 @@
     "port": 3000,
     "refresh": 5,
     "user": "admin",
-    "pass": "hyperplatypuspoison911"
+    "pass": "welcome1"
   }
 }
