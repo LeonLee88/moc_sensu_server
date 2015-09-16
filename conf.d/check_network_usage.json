@@ -1,11 +1,10 @@
 {
   "checks": {
     "networkusage_metrics": {
-      "handlers": ["default","influxdb"],
+      "handlers": ["default","influxdb","mailer"],
       "type": "metric",
       "command": "/etc/sensu/plugins/network_usage.rb -i eth0 -I 2",
       "subscribers": [
-        "moc-sensu"
       ],
       "interval": 300
     }
