@@ -1,0 +1,10 @@
+{
+ "checks": {
+    "glance-api_check": {
+      "handlers": ["default"],
+      "command": "/etc/sensu/plugins/check_glance.py --auth-url http://10.31.27.207:5000/v2.0 --username sensu --password verypoisonyplatypus2 --tenant admin --endpoint http://10.31.27.207:9292",
+      "interval": 30,
+      "subscribers": [ "openstack-api" ]
+    }
+  }
+}
