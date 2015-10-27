@@ -1,7 +1,7 @@
 {
   "checks": {
     "cpu_metrics": {
-      "handlers": ["default"],
+      "handlers": ["default", "influxdb-cpu"],
       "type": "metric",
       "command": "/etc/sensu/plugins/cpu-metrics.rb",
       "subscribers": [

@@ -36,16 +36,33 @@ class SensuToInfluxDB < Sensu::Handler
       host = metricInfo["host"]
       host1 = @event['client']['name']
       tags = metricInfo["tags"]
-      metric = tags[-1].to_s
-      value = m[1].to_i
+     
+      if tags.length == 3
+        metric = tags[-1].to_s
+        cpu = tags[-2].to_s
+        value = m[1].to_i
       
 
-      record = {
-        series: series,
-        values: {value:value},
-        tags: {host:host1, metric: metric},
-        timestamp: m[2].to_i
-      }
+        record = {
+          series: series,
+          values: {value:value},
+          tags: {host:host1, cpu:cpu, metric: metric},
+          timestamp: m[2].to_i
+        }
+      end
+
+      if tags.length == 2
+        metric = tags[-1].to_s
+        value = m[1].to_i
+
+
+        record = {
+          series: series,
+          values: {value:value},
+          tags: {host:host1,metric: metric},
+          timestamp: m[2].to_i
+        }
+      end
       data.push(record)
    end
    puts data

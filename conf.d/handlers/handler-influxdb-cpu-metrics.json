@@ -1,0 +1,8 @@
+{
+  "handlers": {
+       "influxdb-cpu": {
+           "type"        : "pipe",
+           "command"     : "/etc/sensu/handlers/influxdb-cpu-metrics.rb"
+     }
+  }
+}
