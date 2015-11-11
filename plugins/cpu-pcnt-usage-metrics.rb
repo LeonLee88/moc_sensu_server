@@ -13,7 +13,6 @@
 #
 # DEPENDENCIES:
 #   gem: sensu-plugin
-#   gem: socket
 #
 # USAGE:
 #
@@ -27,6 +26,9 @@
 require 'sensu-plugin/metric/cli'
 require 'socket'
 
+#
+# CPU Graphite
+#
 class CpuGraphite < Sensu::Plugin::Metric::CLI::Graphite
   option :scheme,
          description: 'Metric naming scheme, text to prepend to metric',
